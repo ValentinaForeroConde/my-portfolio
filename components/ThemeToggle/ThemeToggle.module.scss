@@ -1,0 +1,55 @@
+$light-color: #e0e0e0;
+$dark-color: #2c2c54;
+
+.toggleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 100px;
+  height: 42px;
+  border-radius: 25px;
+  padding: 5px;
+  background: linear-gradient(145deg, #87ceeb, #f0f8ff);
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &.dark {
+    background: linear-gradient(145deg, $dark-color, #4b4b7c);
+  }
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+.sunIcon {
+  width: 100%;
+  height: 100%;
+  left: 5px;
+}
+
+.moonIcon {
+  width: 100%;
+  height: 100%;
+  right: 5px;
+}
+
+.light .icon {
+  transform: translateX(0);
+}
+
+.dark .icon {
+  transform: translateX(50px);
+}
