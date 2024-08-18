@@ -20,6 +20,64 @@ export default function Home() {
     },
   ];
 
+  const experience = [
+    {
+      title: "Software Developer",
+      company: "AllTheRooms",
+      location: "Remote",
+      duration: "Nov 2021 - Present",
+      description: (
+        <div>
+          <ul>
+            <li>
+              Building and maintaining web applications and the marketing site
+              using React, Next.js, and TypeScript.
+            </li>
+            <li>
+              Enhancing UX and UI by implementing modern, responsive design
+              principles with CSS, SaaS, and Material UI.
+            </li>
+            <li>
+              Integrating Strapi CMS into the marketing site and internal
+              applications, streamlining content management processes.
+            </li>
+            <li>
+              Improving SEO by using tools like Google Analytics, Lighthouse and
+              more, to analyze page performance, optimize site speed, and
+              implement best practices, leading to increased visibility and
+              organic traffic.
+            </li>
+            <li>
+              Collaborating closely with design teams to translate design
+              concepts into functional frontend components.
+            </li>
+            <li>
+              Using GraphQL for backend operations and efficiently consuming
+              endpoints to enhance product features and functionalities.
+            </li>
+            <li>
+              Working on multiple projects with a great team to improve the
+              overall functionality of the products.
+            </li>
+          </ul>
+        </div>
+      ),
+      technologies: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "MaterialUI",
+        "CSS",
+        "HTML",
+        "SaaS",
+        "Tailwind",
+        "Git - GitHub",
+        "Node.js",
+      ],
+    },
+  ];
+
   return (
     <div>
       <Head>
@@ -36,18 +94,8 @@ export default function Home() {
       <div className={styles.container}>
         <PersonalInfo />
         <h1 className={styles.sectionTitle}>EXPERIENCE</h1>
-
-        <ExperienceSection
-          title="Software Developer"
-          company="AllTheRooms"
-          location="Remote"
-          duration="Nov 2021 - Present"
-          description="Currently, I am working on WebHR Mobile Application, WebHR is a Cloud based Social HR Software for SMEs by Verge Systems Inc. WebHR is currently used in over 160 countries world wide by thousands of organizations to manage HR. As a React.js developer with 1.5 years of experience, I have a strong foundation in creating dynamic and responsive mobile and web applications."
-          technologies={["React Native", "React", "JavaScript", "TypeScript"]}
-        />
-
+        <ExperienceSection workExperience={experience} />
         <h1 className={styles.sectionTitle}>PROYECTS</h1>
-
         <ProjectsSection projects={projects} />
       </div>
     </div>

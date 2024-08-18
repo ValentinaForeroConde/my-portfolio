@@ -1,4 +1,4 @@
-import { Typewriter } from "components/Typewriter/Typewriter";
+import Typewriter from "components/Typewriter/Typewriter";
 
 import styles from "./MacWindow.module.scss";
 
@@ -20,10 +20,10 @@ const MacWindow = () => {
         />
 
         <code className={styles.mainInfo}>
-          A dedicated software developer, based in Medellín-Colombia, with 3
+          {`> A dedicated software developer, based in Medellín-Colombia, with 3
           years of professional experience, with a focus on React. I am
           committed to crafting intuitive and responsive UI and UX. driven by a
-          dedication to continuous learning and innovation
+          dedication to continuous learning and innovation`}
         </code>
       </div>
     </div>

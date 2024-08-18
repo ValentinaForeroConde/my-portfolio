@@ -1,6 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
 .section {
-  background-color: #10002b;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #240046;
+  border-radius: 8px;
+  padding: 30px 35px;
+  box-shadow: 0 4px 12px rgba(229, 189, 242, 0.3);
   color: white;
   max-width: 1280px;
   margin: 40px auto;
@@ -41,6 +49,7 @@
 
 .technologies {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 2rem;
 }

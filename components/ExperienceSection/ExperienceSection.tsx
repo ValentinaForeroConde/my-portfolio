@@ -1,42 +1,43 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Button from "components/Button/Button";
 
 import styles from "./ExperienceSection.module.scss";
 
 interface ExperienceSectionProps {
-  title: string;
-  company: string;
-  location: string;
-  duration: string;
-  description: string;
-  technologies: string[];
+  workExperience: {
+    title: string;
+    company: string;
+    location: string;
+    duration: string;
+    description: ReactNode;
+    technologies: string[];
+  }[];
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
-  title,
-  company,
-  location,
-  duration,
-  description,
-  technologies,
+  workExperience,
 }) => {
   return (
-    <div className={styles.section}>
-      <div className={styles.header}>
-        <div className={styles.companyTitle}>
-          <h2 className={styles.company}>{company}</h2>
-          <span className={styles.title}> - {title}</span>
+    <div className={styles.container}>
+      {workExperience?.map((experience) => (
+        <div className={styles.section}>
+          <div className={styles.header}>
+            <div className={styles.companyTitle}>
+              <h2 className={styles.company}>{experience.company}</h2>
+              <span className={styles.title}> - {experience.title}</span>
+            </div>
+            <p className={styles.durationLocation}>
+              {experience.duration} - {experience.location}
+            </p>
+          </div>
+          <p className={styles.description}>{experience.description}</p>
+          <div className={styles.technologies}>
+            {experience.technologies.map((tech) => (
+              <Button key={tech} label={tech} />
+            ))}
+          </div>
         </div>
-        <p className={styles.durationLocation}>
-          {duration} - {location}
-        </p>
-      </div>
-      <p className={styles.description}>{description}</p>
-      <div className={styles.technologies}>
-        {technologies.map((tech) => (
-          <Button key={tech} label={tech} />
-        ))}
-      </div>
+      ))}
     </div>
   );
 };
