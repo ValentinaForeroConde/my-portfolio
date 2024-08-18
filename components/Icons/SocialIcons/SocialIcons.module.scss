@@ -1,0 +1,10 @@
+.svg {
+  path {
+    fill: #ffffff;
+    fill-opacity: 0.45098;
+
+    &:hover {
+      fill: #e0aaff;
+    }
+  }
+}
