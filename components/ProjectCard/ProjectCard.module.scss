@@ -1,0 +1,51 @@
+.card {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  display: flex;
+  &:hover {
+    transform: scale(1);
+  }
+}
+
+.image {
+  width: 550px;
+  height: 350px;
+  border-radius: 8px;
+}
+
+.content {
+  width: 760px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  transform: translate(10%);
+}
+
+.left {
+  transform: translate(-15%);
+}
+
+.featuredLabel {
+  font-size: 0.875rem;
+  color: #b57dd1;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}

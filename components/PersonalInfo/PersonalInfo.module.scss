@@ -1,0 +1,44 @@
+.container {
+  background-color: #10002b;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.1);
+  font-weight: 1000;
+  font-size: 230px;
+  line-height: 230px;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 350px;
+}
+
+.personalInfoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  top: 50%;
+  top: 50%;
+  left: 50%;
+}
+
+.image {
+  position: relative;
+  z-index: 3;
+  width: 290px;
+  height: 275px;
+}
+
+.contactButton {
+  display: flex;
+  justify-content: center;
+}

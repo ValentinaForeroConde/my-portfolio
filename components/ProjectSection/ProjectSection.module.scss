@@ -1,0 +1,11 @@
+.section {
+  background-color: #10002b;
+  max-width: 1280px;
+  margin: 40px auto;
+}
+
+.projectGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
