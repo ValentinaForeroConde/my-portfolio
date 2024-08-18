@@ -21,15 +21,16 @@
 .content {
   width: 760px;
   height: 250px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(107, 107, 107, 0.2);
   padding: 1rem;
   border-radius: 0.5rem;
   color: #fff;
   transform: translate(10%);
+  z-index: 2;
 }
 
 .left {
-  transform: translate(-15%);
+  transform: translate(-10%);
 }
 
 .featuredLabel {

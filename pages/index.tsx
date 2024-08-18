@@ -8,15 +8,39 @@ import ProjectsSection from "components/ProjectSection/ProjectSection";
 export default function Home() {
   const projects = [
     {
-      title: "Example Project",
+      title: "Marketing Site Project",
       description: "A web app for visualizing personalized Spotify data...",
-      imageSrc: "/ATRmktng.png",
+      images: [
+        "/projectImages/mkting_example.png",
+        "/projectImages/mkting_example5.png",
+        "/projectImages/mkting_example2.png",
+        "/projectImages/mkting_example3.png",
+        "/projectImages/mkting_example4.png",
+      ],
       leftPosition: true,
     },
     {
-      title: "Another Project",
+      title: "Dashboard Project",
       description: "A different web application for managing tasks...",
-      imageSrc: "/ATRmktng.png",
+      images: [
+        "/projectImages/dash_example.png",
+        "/projectImages/dash_example2.png",
+        "/projectImages/dash_example3.png",
+      ],
+    },
+    {
+      title: "Strapi Project",
+      description: "A different web application for managing tasks...",
+      images: ["/projectImages/strapi.png"],
+      leftPosition: true,
+    },
+    {
+      title: "Internal Tools Project",
+      description: "A different web application for managing tasks...",
+      images: [
+        "/projectImages/cockpit_example.png",
+        "/projectImages/cockpit_example2.png",
+      ],
     },
   ];
 

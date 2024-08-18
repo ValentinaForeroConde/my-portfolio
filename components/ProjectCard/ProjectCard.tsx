@@ -1,30 +1,27 @@
 import React from "react";
 import clsx from "clsx";
+import Carousel from "components/Carousel/Carousel";
 
 import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  imageSrc: string;
+  images: string[];
   leftPosition?: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  imageSrc,
+  images,
   leftPosition = false,
 }) => {
   return (
     <div className={clsx(styles.card)}>
       {leftPosition && (
         <div className={styles.imageContainer}>
-          <img
-            src={imageSrc}
-            alt={`${title} screenshot`}
-            className={styles.image}
-          />
+          <Carousel images={images} />
         </div>
       )}
       <div className={clsx(styles.content, leftPosition && styles.left)}>
@@ -33,11 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       {!leftPosition && (
         <div className={styles.imageContainer}>
-          <img
-            src={imageSrc}
-            alt={`${title} screenshot`}
-            className={styles.image}
-          />
+          <Carousel images={images} />
         </div>
       )}
     </div>

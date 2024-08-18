@@ -7,7 +7,7 @@ interface ProjectSection {
   projects: {
     title: string;
     description: string;
-    imageSrc: string;
+    images: string[];
     leftPosition?: boolean;
   }[];
 }
@@ -20,7 +20,7 @@ const ProjectsSection: React.FC<ProjectSection> = ({ projects }) => {
             key={index}
             title={project.title}
             description={project.description}
-            imageSrc={project.imageSrc}
+            images={project.images}
             leftPosition={project.leftPosition}
           />
         ))}
