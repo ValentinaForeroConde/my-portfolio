@@ -39,11 +39,11 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                 - {experience.title}
               </span>
             </div>
-            <p className={styles.durationLocation}>
+            <div className={styles.durationLocation}>
               {experience.duration} - {experience.location}
-            </p>
+            </div>
           </div>
-          <p className={styles.description}>{experience.description}</p>
+          <div className={styles.description}>{experience.description}</div>
           <div className={styles.technologies}>
             {experience.technologies.map((technology) => (
               <Button

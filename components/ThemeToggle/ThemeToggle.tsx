@@ -6,24 +6,11 @@ import styles from "./ThemeToggle.module.scss";
 const ThemeToggle: React.FC = () => {
   const theme = useStore((state) => state.theme);
   const setTheme = useStore((state) => state.setTheme);
-  const [isDarkMode, setIsDarkMode] = useState(theme === "dark" ? true : false);
+  const isDarkMode = theme === "dark" ? true : false;
   const currentTheme = isDarkMode ? "light" : "dark";
-
-  useEffect(() => {
-    if (theme === "dark") {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
-  }, []);
 
   const toggleTheme = () => {
     setTheme(currentTheme);
-    if (isDarkMode) {
-      setIsDarkMode(false);
-    } else {
-      setIsDarkMode(true);
-    }
   };
 
   return (

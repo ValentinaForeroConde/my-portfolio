@@ -40,14 +40,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 className={clsx(styles.title, isLightMode && styles.titleLight)}>
           {title}
         </h3>
-        <p
+        <div
           className={clsx(
             styles.description,
             isLightMode && styles.descriptionLight
           )}
         >
           {description}
-        </p>
+        </div>
       </div>
       {!leftPosition && (
         <div className={styles.imageContainerRight}>
