@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { useStore } from "@hooks/useStore";
+
 import styles from "./ThemeToggle.module.scss";
 
 const ThemeToggle: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const theme = useStore((state) => state.theme);
+  const setTheme = useStore((state) => state.setTheme);
+  const [isDarkMode, setIsDarkMode] = useState(theme === "dark" ? true : false);
+  const currentTheme = isDarkMode ? "light" : "dark";
 
   useEffect(() => {
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme === "dark") {
+    if (theme === "dark") {
       setIsDarkMode(true);
-      document.body.classList.add("dark-mode");
     } else {
       setIsDarkMode(false);
-      document.body.classList.remove("dark-mode");
     }
   }, []);
 
   const toggleTheme = () => {
+    setTheme(currentTheme);
     if (isDarkMode) {
       setIsDarkMode(false);
-      document.body.classList.remove("dark-mode");
-      localStorage.setItem("theme", "light");
     } else {
       setIsDarkMode(true);
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
     }
   };
 
@@ -40,6 +39,7 @@ const ThemeToggle: React.FC = () => {
               className={styles.moonIcon}
               viewBox="0 0 28.219 28.219"
               xmlns="http://www.w3.org/2000/svg"
+              fill="#fff"
             >
               <g>
                 <g>

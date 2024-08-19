@@ -1,11 +1,17 @@
+import React from "react";
+import clsx from "clsx";
 import Typewriter from "components/Typewriter/Typewriter";
 
 import styles from "./MacWindow.module.scss";
 
-const MacWindow = () => {
+interface MacWindow {
+  isLightMode?: boolean;
+}
+
+const MacWindow: React.FC<MacWindow> = ({ isLightMode }) => {
   return (
-    <div className={styles.window}>
-      <div className={styles.navbar}>
+    <div className={clsx(styles.window, isLightMode && styles.windowDark)}>
+      <div className={clsx(styles.navbar, isLightMode && styles.navbarDark)}>
         <div className={styles.buttonsContainer}>
           <div className={styles.red} />
           <div className={styles.yellow} />
@@ -14,12 +20,14 @@ const MacWindow = () => {
       </div>
       <div className={styles.windowContainer}>
         <Typewriter
-          className={styles.name}
+          className={clsx(styles.name, isLightMode && styles.nameLight)}
           text={`I'm Valentina Forero`}
           speed={100}
         />
 
-        <code className={styles.mainInfo}>
+        <code
+          className={clsx(styles.mainInfo, isLightMode && styles.mainInfoLight)}
+        >
           {`> A dedicated software developer, based in Medellín-Colombia, with 3
           years of professional experience, with a focus on React. I am
           committed to crafting intuitive and responsive UI and UX. driven by a

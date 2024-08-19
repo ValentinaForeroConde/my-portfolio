@@ -12,10 +12,10 @@
 }
 
 .section {
-  background-color: #240046;
+  background-color: $color-dark0;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(229, 189, 242, 0.3);
-  color: white;
+  color: $color-white;
   width: 100%;
   padding: 10px;
 
@@ -24,6 +24,13 @@
     padding: 30px 35px;
     margin: 0 auto;
   }
+}
+
+.sectionLight {
+  background-color: transparent;
+  box-shadow: 0 4px 12px rgba(60, 53, 6, 0.3);
+
+  color: $color-black;
 }
 
 .header {
@@ -56,7 +63,11 @@
 .title {
   font-size: 1.5rem;
   margin-left: 0.5rem;
-  color: #ccc;
+  color: $color-white2;
+}
+
+.titleLight {
+  color: $color-grey;
 }
 
 .durationLocation {

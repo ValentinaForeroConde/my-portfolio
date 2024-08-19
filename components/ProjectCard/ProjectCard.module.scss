@@ -38,9 +38,9 @@
 .content {
   width: 100%;
   background: rgba(107, 107, 107, 0.2);
-  padding: 1rem;
+  padding: 0 40px;
   border-radius: 0.5rem;
-  color: #fff;
+  color: $color-white;
   z-index: 2;
   margin-top: -30px;
 
@@ -56,6 +56,12 @@
   }
 }
 
+.contentLight {
+  color: $color-black;
+  background: transparent;
+  box-shadow: 0 4px 12px rgba(29, 27, 1, 0.3);
+}
+
 .left {
   @include desktop {
     transform: translate(-10%);
@@ -69,16 +75,24 @@
 .title {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: $color-white;
+}
+
+.titleLight {
+  color: $color-black;
 }
 
 .description {
   font-size: 1rem;
   line-height: 1.5;
-  color: #e0e0e0;
+  color: $color-white;
   width: 100%;
 
   @include desktop {
     width: 600px;
   }
+}
+
+.descriptionLight {
+  color: $color-black;
 }

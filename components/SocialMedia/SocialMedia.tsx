@@ -7,18 +7,22 @@ import {
   XIcon,
 } from "components/Icons/SocialIcons/SocialIcons";
 
-const SocialMedia = () => {
+interface SocialMedia {
+  isLightMode?: boolean;
+}
+
+const SocialMedia: React.FC<SocialMedia> = ({ isLightMode }) => {
   const socials = [
     {
-      icon: <LinkedinIcon />,
+      icon: <LinkedinIcon isLightMode={isLightMode} />,
       link: "https://www.linkedin.com/in/valentina-forero-conde-911936203/",
     },
     {
-      icon: <XIcon />,
+      icon: <XIcon isLightMode={isLightMode} />,
       link: "https://x.com/valefoCode",
     },
     {
-      icon: <GithubIcon />,
+      icon: <GithubIcon isLightMode={isLightMode} />,
       link: "https://github.com/ValentinaForeroConde",
     },
   ];

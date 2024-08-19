@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import clsx from "clsx";
 import Button from "components/Button/Button";
 
 import styles from "./ExperienceSection.module.scss";
@@ -10,21 +11,33 @@ interface ExperienceSectionProps {
     location: string;
     duration: string;
     description: ReactNode;
-    technologies: string[];
+    technologies: {
+      name: string;
+      link: string;
+    }[];
   }[];
+  isLightMode?: boolean;
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   workExperience,
+  isLightMode,
 }) => {
   return (
     <div className={styles.container}>
       {workExperience?.map((experience) => (
-        <div key={experience.title} className={styles.section}>
+        <div
+          key={experience.title}
+          className={clsx(styles.section, isLightMode && styles.sectionLight)}
+        >
           <div className={styles.header}>
             <div className={styles.companyTitle}>
               <h2 className={styles.company}>{experience.company}</h2>
-              <span className={styles.title}> - {experience.title}</span>
+              <span
+                className={clsx(styles.title, isLightMode && styles.titleLight)}
+              >
+                - {experience.title}
+              </span>
             </div>
             <p className={styles.durationLocation}>
               {experience.duration} - {experience.location}
@@ -32,8 +45,15 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
           </div>
           <p className={styles.description}>{experience.description}</p>
           <div className={styles.technologies}>
-            {experience.technologies.map((tech) => (
-              <Button key={tech} label={tech} />
+            {experience.technologies.map((technology) => (
+              <Button
+                key={technology.name}
+                label={technology.name}
+                onClick={() => {
+                  window.open(technology.link);
+                }}
+                isLightMode={isLightMode}
+              />
             ))}
           </div>
         </div>

@@ -1,11 +1,16 @@
 import React from "react";
+import clsx from "clsx";
 
 import styles from "./SocialIcons.module.scss";
 
-export const GithubIcon = () => {
+interface SocialIconTheme {
+  isLightMode?: boolean;
+}
+
+export const GithubIcon: React.FC<SocialIconTheme> = ({ isLightMode }) => {
   return (
     <svg
-      className={styles.svg}
+      className={clsx(styles.svg, isLightMode && styles.svgLight)}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="50px"
@@ -16,10 +21,10 @@ export const GithubIcon = () => {
   );
 };
 
-export const LinkedinIcon = () => {
+export const LinkedinIcon: React.FC<SocialIconTheme> = ({ isLightMode }) => {
   return (
     <svg
-      className={styles.svg}
+      className={clsx(styles.svg, isLightMode && styles.svgLight)}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="50px"
@@ -30,10 +35,10 @@ export const LinkedinIcon = () => {
   );
 };
 
-export const XIcon = () => {
+export const XIcon: React.FC<SocialIconTheme> = ({ isLightMode }) => {
   return (
     <svg
-      className={styles.svg}
+      className={clsx(styles.svg, isLightMode && styles.svgLight)}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       width="50px"

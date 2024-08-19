@@ -1,12 +1,16 @@
 @import "styles/_mixins.scss";
 
 .section {
-  background-color: #10002b;
+  background-color: $color-dark;
   max-width: 1280px;
 
   @include desktop {
     margin: 0 auto;
   }
+}
+
+.sectionLight {
+  background-color: $color-yellow-light;
 }
 
 .projectSection {

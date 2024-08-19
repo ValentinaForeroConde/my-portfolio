@@ -41,17 +41,26 @@ export const experience = [
       </div>
     ),
     technologies: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "TypeScript",
-      "MaterialUI",
-      "CSS",
-      "HTML",
-      "SaaS",
-      "Tailwind",
-      "Git - GitHub",
-      "Node.js",
+      {
+        name: "React",
+        link: "https://react.dev/",
+      },
+      { name: "Next.js", link: "https://nextjs.org/" },
+      {
+        name: "JavaScript",
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      { name: "TypeScript", link: "https://www.typescriptlang.org/" },
+      { name: "MaterialUI", link: "https://mui.com/" },
+      { name: "CSS", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      {
+        name: "HTML",
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      },
+      { name: "Sass", link: "https://sass-lang.com/" },
+      { name: "Tailwind", link: "https://tailwindcss.com/" },
+      { name: "Git - GitHub", link: "https://docs.github.com/en/get-started" },
+      { name: "Node.js", link: "https://nodejs.org/docs/latest/api/" },
     ],
   },
   {
@@ -71,6 +80,9 @@ export const experience = [
         </ul>
       </div>
     ),
-    technologies: ["Arduino", "Firebase"],
+    technologies: [
+      { name: "Arduino", link: "https://docs.arduino.cc/" },
+      { name: "Firebase", link: "https://firebase.google.com/" },
+    ],
   },
 ];

@@ -1,7 +1,7 @@
 @import "styles/_mixins.scss";
 
 .container {
-  background-color: #10002b;
+  background-color: $color-dark;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -18,8 +18,12 @@
   }
 }
 
+.containerLight {
+  background-color: $color-yellow-light;
+}
+
 .title {
-  color: rgba(255, 255, 255, 0.1);
+  color: $color-dark-with-opacity;
   font-size: 55px;
   font-weight: $fontWeights-bold;
   position: absolute;
@@ -39,6 +43,10 @@
     line-height: 230px;
     margin-top: 350px;
   }
+}
+
+.titleLight {
+  color: $color-orange-with-opacity;
 }
 
 .personalInfoContainer {

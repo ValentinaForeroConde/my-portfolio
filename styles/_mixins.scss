@@ -1,0 +1,59 @@
+// Dark mode
+$color-dark: #10002b;
+$color-dark0: #240046;
+$color-dark1: #3c096c;
+$color-dark2: #5a189a;
+$color-dark3: #7b2cbf;
+$color-dark4: #9d4edd;
+$color-dark5: #c77dff;
+$color-dark6: #e0aaff;
+$color-dark-with-opacity: rgba(255, 255, 255, 0.1);
+
+// Light mode
+$color-yellow-light: #fffae5;
+$color-yellow-light0: #ffe97f;
+$color-yellow-light1: #ffe566;
+$color-yellow-light2: #ffe14c;
+$color-yellow-light3: #ffdd32;
+$color-yellow-light4: #ffd819;
+$color-yellow-light5: #ffd400;
+$color-yellow-with-opacity: rgba(255, 213, 0, 0.641);
+$color-orange-light: #ffaa00;
+$color-orange-light0: #ffa200;
+$color-orange-light1: #ff9500;
+$color-orange-light2: #ff8800;
+$color-orange-light3: #f77b07;
+$color-orange-with-opacity: rgba(255, 123, 0, 0.536);
+
+// General colors
+$color-white: #ffff;
+$color-white2: #ccc;
+$color-black: #1d2129;
+$color-grey: #777b81;
+$color-red: #ff483f;
+$color-yellow: #ecbb38;
+$color-green: #36d3a8;
+
+// Font Weights
+$fontWeights-light: 300;
+$fontWeights-regular: 400;
+$fontWeights-medium: 500;
+$fontWeights-semiBold: 600;
+$fontWeights-bold: 700;
+$fontWeights-extraBold: 800;
+
+//Breakpoint
+$breakpoint-desktop: 1280px;
+$breakpoint-mobile: 700px;
+
+@mixin tablet {
+  @media screen and (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}

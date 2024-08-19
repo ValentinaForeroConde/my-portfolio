@@ -1,7 +1,7 @@
 @import "styles/_mixins.scss";
 
 .container {
-  background-color: #10002b;
+  background-color: $color-dark;
   padding: 20px;
 
   @include tablet {
@@ -9,8 +9,12 @@
   }
 }
 
+.containerLight {
+  background-color: $color-yellow-light;
+}
+
 .sectionTitle {
-  color: rgba(255, 255, 255, 0.1);
+  color: $color-dark-with-opacity;
   max-width: 1280px;
   margin: auto;
   padding-bottom: 10px;
@@ -24,4 +28,8 @@
   @include desktop {
     font-size: 50px;
   }
+}
+
+.sectionTitleLight {
+  color: $color-orange-with-opacity;
 }

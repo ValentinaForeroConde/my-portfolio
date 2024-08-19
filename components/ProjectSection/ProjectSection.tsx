@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import ProjectCard from "components/ProjectCard/ProjectCard";
 
 import styles from "./ProjectSection.module.scss";
@@ -10,10 +11,16 @@ interface ProjectSection {
     images: string[];
     leftPosition?: boolean;
   }[];
+  isLightMode?: boolean;
 }
-const ProjectsSection: React.FC<ProjectSection> = ({ projects }) => {
+const ProjectsSection: React.FC<ProjectSection> = ({
+  projects,
+  isLightMode,
+}) => {
   return (
-    <section className={styles.section}>
+    <section
+      className={clsx(styles.section, isLightMode && styles.sectionLight)}
+    >
       <div className={styles.projectSection}>
         {projects.map((project, index) => (
           <ProjectCard
@@ -22,6 +29,7 @@ const ProjectsSection: React.FC<ProjectSection> = ({ projects }) => {
             description={project.description}
             images={project.images}
             leftPosition={project.leftPosition}
+            isLightMode={isLightMode}
           />
         ))}
       </div>
