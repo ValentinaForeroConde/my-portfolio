@@ -1,0 +1,54 @@
+@import "styles/_mixins.scss";
+
+.toggleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 60px;
+  height: 30px;
+  background-color: $color-dark6;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  font-size: 15px;
+  color: $color-black;
+  transition: all 0.3s ease;
+
+  span {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    &.active {
+      color: $color-white;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-color: $color-white;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+  }
+
+  &.en::before {
+    transform: translateX(100%);
+  }
+}
+
+.toggleLight {
+  background-color: $color-orange-light3;
+}
