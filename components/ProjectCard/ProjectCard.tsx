@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Carousel from "components/Carousel/Carousel";
 
 import styles from "./ProjectCard.module.scss";
+import { useBreakpoint } from "@hooks/useBreakpoint";
 
 interface ProjectCardProps {
   title: string;
@@ -17,9 +18,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   images,
   leftPosition = false,
 }) => {
+  const breakpoint = useBreakpoint();
+  const isDesktop = breakpoint === "desktop";
+
   return (
     <div className={clsx(styles.card)}>
-      {leftPosition && (
+      {(leftPosition || !isDesktop) && (
         <div className={styles.imageContainer}>
           <Carousel images={images} />
         </div>
@@ -29,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <p className={styles.description}>{description}</p>
       </div>
       {!leftPosition && (
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContainerRight}>
           <Carousel images={images} />
         </div>
       )}

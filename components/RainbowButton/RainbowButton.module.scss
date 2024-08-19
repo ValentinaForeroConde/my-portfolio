@@ -36,16 +36,15 @@
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
   border-radius: 10px;
 }
 
-.button:active {
+.button:hover {
   color: #e0aaff;
 }
 
-.button:active:after {
+.button:hover:after {
   background: transparent;
 }
 

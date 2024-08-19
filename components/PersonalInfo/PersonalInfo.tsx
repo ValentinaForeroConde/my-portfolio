@@ -12,7 +12,12 @@ const PersonalInfo = () => {
         <div>
           <img className={styles.image} src="emoji.png" />
           <div className={styles.contactButton}>
-            <RainbowButton text="Contac Me!" />
+            <RainbowButton
+              text="Contact Me!"
+              onClick={() => {
+                window.location.href = "mailto:valeforero98@gmail.com";
+              }}
+            />
           </div>
         </div>
 

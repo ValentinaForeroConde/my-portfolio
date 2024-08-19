@@ -1,15 +1,28 @@
+@import "styles/_mixins.scss";
+
 .carousel {
-  position: relative;
-  width: 550px;
-  height: 350px;
+  width: 100%;
+  height: 300px;
   overflow: hidden;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    height: 540px;
+  }
+
+  @include desktop {
+    position: relative;
+    width: 550px;
+    height: 350px;
+  }
 }
 
 .carouselImage {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  height: 300px;
+  width: 90%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   display: flex;
@@ -19,8 +32,16 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 8px;
+  }
+
+  @include tablet {
+    height: 500px;
+  }
+
+  @include desktop {
+    width: 100%;
+    height: 100%;
   }
 }
 

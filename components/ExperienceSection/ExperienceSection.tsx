@@ -20,7 +20,7 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   return (
     <div className={styles.container}>
       {workExperience?.map((experience) => (
-        <div className={styles.section}>
+        <div key={experience.title} className={styles.section}>
           <div className={styles.header}>
             <div className={styles.companyTitle}>
               <h2 className={styles.company}>{experience.company}</h2>

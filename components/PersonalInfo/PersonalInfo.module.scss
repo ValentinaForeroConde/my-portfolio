@@ -1,3 +1,5 @@
+@import "styles/_mixins.scss";
+
 .container {
   background-color: #10002b;
   width: 100%;
@@ -6,30 +8,55 @@
   height: 700px;
   display: flex;
   flex-direction: column;
+
+  @include tablet {
+    height: 600px;
+  }
+
+  @include desktop {
+    height: 700px;
+  }
 }
 
 .title {
   color: rgba(255, 255, 255, 0.1);
-  font-weight: 1000;
-  font-size: 230px;
-  line-height: 230px;
+  font-size: 55px;
+  font-weight: $fontWeights-bold;
   position: absolute;
   z-index: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  margin-top: 350px;
+  margin-top: 110px;
+
+  @include tablet {
+    font-size: 120px;
+    margin-top: 250px;
+  }
+
+  @include desktop {
+    font-size: 230px;
+    line-height: 230px;
+    margin-top: 350px;
+  }
 }
 
 .personalInfoContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
   top: 50%;
   top: 50%;
   left: 50%;
-  gap: 2rem;
+  gap: 1rem;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 .image {

@@ -14,7 +14,7 @@ interface ProjectSection {
 const ProjectsSection: React.FC<ProjectSection> = ({ projects }) => {
   return (
     <section className={styles.section}>
-      <div className={styles.projectGrid}>
+      <div className={styles.projectSection}>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

@@ -1,40 +1,27 @@
+@import "styles/_mixins.scss";
+
 .container {
   background-color: #10002b;
-  padding: 20px 50px;
+  padding: 20px;
+
+  @include tablet {
+    padding: 20px 50px;
+  }
 }
 
 .sectionTitle {
   color: rgba(255, 255, 255, 0.1);
   max-width: 1280px;
   margin: auto;
-  padding: 10px 0;
-}
+  padding-bottom: 10px;
+  font-size: 30px;
 
-.header {
-  display: flex;
-  justify-content: end;
-  gap: 1rem;
-}
-
-.download {
-  font-size: 14px;
-  color: #e0aaff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
+  @include tablet {
+    font-size: 40px;
+    padding: 10px 0;
   }
-}
 
-.svg {
-  height: 20px;
-  width: 20px;
-  path {
-    fill: #e0aaff;
+  @include desktop {
+    font-size: 50px;
   }
 }

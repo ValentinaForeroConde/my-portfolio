@@ -1,33 +1,56 @@
+@import "styles/_mixins.scss";
+
 .container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 40px;
+
+  @include tablet {
+    margin-bottom: 60px;
+  }
 }
 
 .section {
   background-color: #240046;
   border-radius: 8px;
-  padding: 30px 35px;
   box-shadow: 0 4px 12px rgba(229, 189, 242, 0.3);
   color: white;
-  max-width: 1280px;
-  margin: 40px auto 0 auto;
+  width: 100%;
+  padding: 10px;
+
+  @include desktop {
+    max-width: 1280px;
+    padding: 30px 35px;
+    margin: 0 auto;
+  }
 }
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
+
+  @include desktop {
+    flex-direction: row;
+  }
 }
 
 .companyTitle {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .company {
-  font-size: 2rem;
+  font-size: 22px;
   font-weight: bold;
   margin: 0;
+
+  @include desktop {
+    font-size: 32px;
+  }
 }
 
 .title {
@@ -37,8 +60,12 @@
 }
 
 .durationLocation {
-  font-size: 1rem;
-  text-align: right;
+  font-size: 14px;
+
+  @include desktop {
+    text-align: right;
+    font-size: 16px;
+  }
 }
 
 .description {

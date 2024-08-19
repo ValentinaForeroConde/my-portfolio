@@ -1,46 +1,69 @@
+@import "styles/_mixins.scss";
+
 .card {
   margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .imageContainer {
   display: flex;
-  &:hover {
-    transform: scale(1);
-  }
 }
 
 .image {
-  width: 550px;
-  height: 350px;
+  width: 100%;
+  height: 320px;
   border-radius: 8px;
+
+  @include desktop {
+    width: 550px;
+    height: 350px;
+  }
+}
+
+.imageContainerRight {
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
 }
 
 .content {
-  width: 760px;
-  height: 250px;
+  width: 100%;
   background: rgba(107, 107, 107, 0.2);
   padding: 1rem;
   border-radius: 0.5rem;
   color: #fff;
-  transform: translate(10%);
   z-index: 2;
+  margin-top: -30px;
+
+  @include tablet {
+    margin-top: -80px;
+  }
+
+  @include desktop {
+    margin-top: 0;
+    width: 760px;
+    height: 250px;
+    transform: translate(10%);
+  }
 }
 
 .left {
-  transform: translate(-10%);
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  text-align: end;
-}
-
-.featuredLabel {
-  font-size: 0.875rem;
-  color: #b57dd1;
-  margin-bottom: 0.5rem;
+  @include desktop {
+    transform: translate(-10%);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+  }
 }
 
 .title {
@@ -53,5 +76,9 @@
   font-size: 1rem;
   line-height: 1.5;
   color: #e0e0e0;
-  width: 600px;
+  width: 100%;
+
+  @include desktop {
+    width: 600px;
+  }
 }
