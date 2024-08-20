@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useStore } from "@hooks/useStore";
 import clsx from "clsx";
 
 import styles from "./LanguageToggle.module.scss";
@@ -8,11 +9,14 @@ interface LanguageToggle {
 }
 
 const LanguageToggle: React.FC<LanguageToggle> = ({ theme }) => {
-  const [language, setLanguage] = useState<"EN" | "ES">("EN");
+  const language = useStore((state) => state.language);
+  const setLanguage = useStore((state) => state.setLanguage);
+  const isEnglishLanguage = language === "EN" ? true : false;
+  const changeLanguage = isEnglishLanguage ? "ES" : "EN";
   const isLightMode = theme === "light";
 
   const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === "EN" ? "ES" : "EN"));
+    setLanguage(changeLanguage);
   };
 
   return (
@@ -24,8 +28,8 @@ const LanguageToggle: React.FC<LanguageToggle> = ({ theme }) => {
           isLightMode && styles.toggleLight
         )}
       >
-        <span className={language === "EN" ? styles.active : ""}>EN</span>
         <span className={language === "ES" ? styles.active : ""}>ES</span>
+        <span className={language === "EN" ? styles.active : ""}>EN</span>
       </div>
     </div>
   );

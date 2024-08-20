@@ -7,12 +7,13 @@ import styles from "./Header.module.scss";
 
 interface Header {
   theme?: string;
+  isEspanishLanguage?: boolean;
 }
 
-const Header: React.FC<Header> = ({ theme }) => {
+const Header: React.FC<Header> = ({ theme, isEspanishLanguage }) => {
   return (
     <div className={styles.header}>
-      <DownloadLink theme={theme} />
+      <DownloadLink theme={theme} isEspanishLanguage={isEspanishLanguage} />
       <ThemeToggle />
       <LanguageToggle theme={theme} />
     </div>

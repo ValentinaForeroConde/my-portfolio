@@ -73,14 +73,6 @@
   border-radius: 10px;
 }
 
-.button:hover {
-  color: $color-dark6;
-}
-
-.buttonLight:hover {
-  color: $color-black;
-}
-
 .button:hover:after {
   background: transparent;
 }

@@ -51,7 +51,7 @@
   @include desktop {
     margin-top: 0;
     width: 760px;
-    height: 250px;
+    height: 280px;
     transform: translate(10%);
   }
 }
@@ -89,10 +89,25 @@
   width: 100%;
 
   @include desktop {
-    width: 600px;
+    width: 550px;
   }
 }
 
 .descriptionLight {
   color: $color-black;
+}
+
+.tags {
+  margin-top: 10px;
+  font-size: 14px;
+  color: $color-dark6;
+  display: flex;
+}
+
+.tag {
+  margin: 0 4px;
+}
+
+.lightTags {
+  color: $color-orange-light3;
 }

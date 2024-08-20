@@ -2,15 +2,15 @@
 
 .window {
   width: 100%;
-  max-height: 280px;
+  max-height: 380px;
   background-color: $color-white;
   border-radius: 6px;
   z-index: 100;
   position: relative;
 
   @include tablet {
-    width: 350px;
-    height: 230px;
+    width: 435px;
+    height: 248px;
   }
 }
 
@@ -76,7 +76,7 @@
 
 .mainInfo {
   font-size: 14px;
-  margin: 10px 10px 10px 20px;
+  margin: 0 10px 10px 20px;
   color: $color-dark0;
 }
 

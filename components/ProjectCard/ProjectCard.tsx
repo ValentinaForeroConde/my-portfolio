@@ -10,6 +10,7 @@ interface ProjectCardProps {
   description: string;
   images: string[];
   leftPosition?: boolean;
+  tags?: string[];
   isLightMode?: boolean;
 }
 
@@ -17,6 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   images,
+  tags,
   leftPosition = false,
   isLightMode,
 }) => {
@@ -47,6 +49,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         >
           {description}
+        </div>
+        <div className={clsx(styles.tags, isLightMode && styles.lightTags)}>
+          {tags?.map((tag) => (
+            <div className={styles.tag}>{tag}</div>
+          ))}
         </div>
       </div>
       {!leftPosition && (

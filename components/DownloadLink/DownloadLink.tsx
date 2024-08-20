@@ -5,9 +5,13 @@ import styles from "./DownloadLink.module.scss";
 
 interface DownloadLink {
   theme?: string;
+  isEspanishLanguage?: boolean;
 }
 
-const DownloadLink: React.FC<DownloadLink> = ({ theme }) => {
+const DownloadLink: React.FC<DownloadLink> = ({
+  theme,
+  isEspanishLanguage,
+}) => {
   const isLightMode = theme === "light";
 
   return (
@@ -16,7 +20,7 @@ const DownloadLink: React.FC<DownloadLink> = ({ theme }) => {
         href="https://drive.google.com/file/d/1-7e7vBngGh0jDb1VCcGvMY7OMIWc2znp/view"
         target="_blank"
       >
-        Download my CV
+        {isEspanishLanguage ? "Descargar mi CV" : "Download my CV"}
       </a>
       <svg
         className={clsx(styles.svg, isLightMode && styles.svgLight)}

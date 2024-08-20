@@ -10,6 +10,7 @@ interface ProjectSection {
     description: string;
     images: string[];
     leftPosition?: boolean;
+    tags?: string[];
   }[];
   isLightMode?: boolean;
 }
@@ -29,6 +30,7 @@ const ProjectsSection: React.FC<ProjectSection> = ({
             description={project.description}
             images={project.images}
             leftPosition={project.leftPosition}
+            tags={project.tags}
             isLightMode={isLightMode}
           />
         ))}

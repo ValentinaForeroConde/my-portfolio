@@ -6,16 +6,34 @@ import styles from "./PersonalInfo.module.scss";
 
 interface PersonalInfo {
   theme?: string;
+  isEspanishLanguage?: boolean;
 }
 
-const PersonalInfo: React.FC<PersonalInfo> = ({ theme }) => {
+const PersonalInfo: React.FC<PersonalInfo> = ({
+  theme,
+  isEspanishLanguage,
+}) => {
   const isLightMode = theme === "light";
   return (
     <div
       className={clsx(styles.container, isLightMode && styles.containerLight)}
     >
-      <h1 className={clsx(styles.title, isLightMode && styles.titleLight)}>
-        Software Developer
+      <h1
+        className={clsx(
+          styles.title,
+          isLightMode && styles.titleLight,
+          isEspanishLanguage && styles.espanishTitle
+        )}
+      >
+        {isEspanishLanguage ? (
+          <div>
+            Desarrolladora <br />
+            De <br />
+            Software
+          </div>
+        ) : (
+          "Software Developer"
+        )}
       </h1>
 
       <div className={styles.personalInfoContainer}>
@@ -26,7 +44,7 @@ const PersonalInfo: React.FC<PersonalInfo> = ({ theme }) => {
           />
           <div className={styles.contactButton}>
             <RainbowButton
-              text="Contact Me!"
+              text={isEspanishLanguage ? "Contáctame!" : "Contact Me!"}
               onClick={() => {
                 window.location.href = "mailto:valeforero98@gmail.com";
               }}
@@ -35,7 +53,10 @@ const PersonalInfo: React.FC<PersonalInfo> = ({ theme }) => {
           </div>
         </div>
 
-        <MacWindow isLightMode={isLightMode} />
+        <MacWindow
+          isLightMode={isLightMode}
+          isEspanishLanguage={isEspanishLanguage}
+        />
       </div>
     </div>
   );

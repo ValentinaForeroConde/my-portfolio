@@ -49,6 +49,21 @@
   color: $color-orange-with-opacity;
 }
 
+.espanishTitle {
+  font-size: 34px;
+
+  @include tablet {
+    font-size: 80px;
+    margin-top: 200px;
+  }
+
+  @include desktop {
+    font-size: 150px;
+    line-height: 150px;
+    margin-top: 350px;
+  }
+}
+
 .personalInfoContainer {
   display: flex;
   flex-direction: column;
@@ -58,7 +73,7 @@
   top: 50%;
   top: 50%;
   left: 50%;
-  gap: 1rem;
+  gap: 8px;
 
   @include desktop {
     display: flex;

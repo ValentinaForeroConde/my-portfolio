@@ -5,20 +5,28 @@ import PersonalInfo from "components/PersonalInfo/PersonalInfo";
 import ExperienceSection from "components/ExperienceSection/ExperienceSection";
 import ProjectsSection from "components/ProjectSection/ProjectSection";
 import SocialMedia from "components/SocialMedia/SocialMedia";
-import { projects } from "utils/Projectsinfo";
-import { experience } from "utils/ExperienceInfo";
+import { getProjects } from "utils/Projectsinfo";
+import { getExperience } from "utils/ExperienceInfo";
 import { useStore } from "@hooks/useStore";
 
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   const theme = useStore((state) => state.theme);
+  const language = useStore((state) => state.language);
   const isLightMode = theme === "light";
+  const isEspanishLanguage = language === "ES";
+  const experience = getExperience(isEspanishLanguage);
+  const projects = getProjects(isEspanishLanguage);
 
   return (
     <div>
       <Head>
-        <title>Valentina's Portfolio</title>
+        <title>
+          {isEspanishLanguage
+            ? "Portafolio Valentina"
+            : "Valentina's Portfolio"}
+        </title>
         <link rel="icon" href={isLightMode ? "sunglasses.png" : "emoji.png"} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -31,15 +39,15 @@ export default function Home() {
       <div
         className={clsx(styles.container, isLightMode && styles.containerLight)}
       >
-        <Header theme={theme} />
-        <PersonalInfo theme={theme} />
+        <Header theme={theme} isEspanishLanguage={isEspanishLanguage} />
+        <PersonalInfo theme={theme} isEspanishLanguage={isEspanishLanguage} />
         <h1
           className={clsx(
             styles.sectionTitle,
             isLightMode && styles.sectionTitleLight
           )}
         >
-          EXPERIENCE
+          {isEspanishLanguage ? "EXPERIENCIA" : "EXPERIENCE"}
         </h1>
         <ExperienceSection
           workExperience={experience}
@@ -51,7 +59,7 @@ export default function Home() {
             isLightMode && styles.sectionTitleLight
           )}
         >
-          PROJECTS
+          {isEspanishLanguage ? "PROYECTOS" : "PROJECTS"}
         </h1>
         <ProjectsSection projects={projects} isLightMode={isLightMode} />
         <SocialMedia isLightMode={isLightMode} />
