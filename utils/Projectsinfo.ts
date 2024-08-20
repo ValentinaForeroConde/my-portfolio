@@ -15,6 +15,7 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         "/projectImages/mkting_example2.png",
         "/projectImages/mkting_example3.png",
         "/projectImages/mkting_example4.png",
+        "/projectImages/mkting_example5.png",
       ],
       leftPosition: true,
       tags: [
@@ -61,7 +62,7 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         : `I spearheaded the development of a custom content management system (CMS) using Strapi, designed from the ground up 
            to empower non-technical team members to manage and update content on the marketing site. 
            This project focused on creating an intuitive and flexible platform that streamlined content creation and management processes.`,
-      images: ["/projectImages/strapi.png"],
+      images: ["/projectImages/strapi.png", "/projectImages/strapi2.png"],
       leftPosition: true,
       tags: ["#Next.js", "#Typescript", "#GraphQL", "#Strapi"],
     },
@@ -78,6 +79,7 @@ export const getProjects = (isEspanishLanguage: boolean) => {
       images: [
         "/projectImages/cockpit_example.png",
         "/projectImages/cockpit_example2.png",
+        "/projectImages/cockpit_example3.png",
       ],
       tags: [
         "#React",
