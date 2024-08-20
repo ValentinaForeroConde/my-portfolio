@@ -17,7 +17,7 @@ const MacWindow: React.FC<MacWindow> = ({
     ? "Soy Valentina Forero"
     : `I'm Valentina Forero`;
   const description = isEspanishLanguage
-    ? `> Una desarrolladora de software apasionado, radicada en Medellín-Colombia, 
+    ? `> Una desarrolladora de software apasionada, radicada en Medellín-Colombia, 
   con 3 años de experiencia profesional especializada en React. Estoy comprometida
   con la creación de interfaces intuitivas, receptivas y fáciles de usar que
   ofrezcan experiencias excepcionales al usuario. Mi trabajo está impulsado
