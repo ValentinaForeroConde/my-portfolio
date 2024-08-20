@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import clsx from "clsx";
-import Button from "components/Button/Button";
+import Button from "@components/Button/Button";
 
 import styles from "./ExperienceSection.module.scss";
 

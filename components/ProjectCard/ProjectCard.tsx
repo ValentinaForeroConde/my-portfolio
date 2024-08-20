@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import Carousel from "components/Carousel/Carousel";
+import Carousel from "@components/Carousel/Carousel";
 import { useBreakpoint } from "@hooks/useBreakpoint";
 
 import styles from "./ProjectCard.module.scss";

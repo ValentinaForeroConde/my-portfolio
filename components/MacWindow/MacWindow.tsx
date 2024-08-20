@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import Typewriter from "components/Typewriter/Typewriter";
+import Typewriter from "@components/Typewriter/Typewriter";
 
 import styles from "./MacWindow.module.scss";
 

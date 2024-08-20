@@ -1,11 +1,11 @@
 import React from "react";
-
-import styles from "./SocialMedia.module.scss";
 import {
   GithubIcon,
   LinkedinIcon,
   XIcon,
-} from "components/Icons/SocialIcons/SocialIcons";
+} from "@components/Icons/SocialIcons/SocialIcons";
+
+import styles from "./SocialMedia.module.scss";
 
 interface SocialMedia {
   isLightMode?: boolean;

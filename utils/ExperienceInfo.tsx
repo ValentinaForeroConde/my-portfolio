@@ -112,6 +112,7 @@ export const getExperience = (isEspanishLanguage: boolean) => {
           link: "https://docs.github.com/en/get-started",
         },
         { name: "Node.js", link: "https://nodejs.org/docs/latest/api/" },
+        { name: "Formik - Yup", link: "https://formik.org/" },
       ],
     },
     {

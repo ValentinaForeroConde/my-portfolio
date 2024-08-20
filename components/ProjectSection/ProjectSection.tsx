@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import ProjectCard from "components/ProjectCard/ProjectCard";
+import ProjectCard from "@components/ProjectCard/ProjectCard";
 
 import styles from "./ProjectSection.module.scss";
 

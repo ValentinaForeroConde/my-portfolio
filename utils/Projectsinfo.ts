@@ -26,7 +26,7 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         "#Storybook",
         "#CSS",
         "#HTML",
-        "#CutomUILib",
+        "#CustomUILib",
       ],
     },
     {
@@ -50,7 +50,7 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         "#Typescript",
         "#GraphQL",
         "#Scss",
-        "#CutomUILib",
+        "#CustomUILib",
       ],
     },
     {
@@ -88,19 +88,8 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         "#GraphQL",
         "#Tailwind",
         "MaterialUI",
-        "#CutomUILib",
+        "#Formik-YUP",
       ],
-    },
-    {
-      title: isEspanishLanguage ? "Aplicación ProTic" : "ProTic App",
-      description: isEspanishLanguage
-        ? `Fue una aplicación integral desarrollada durante el curso MisionTIC. Incluía módulos clave para la gestión de ventas, productos y usuarios, 
-           proporcionando una solución totalmente integrada para pequeñas y medianas empresas para optimizar sus operaciones.`
-        : `It was a comprehensive application developed during the MisionTIC course. It included key modules for managing sales, products, and users, 
-           providing a fully integrated solution for small to medium-sized businesses to streamline their operations.`,
-      images: ["/projectImages/proTic.png"],
-      leftPosition: true,
-      tags: ["#Javascript", "#HTML", "#CSS", "#Tailwind"],
     },
     {
       title: isEspanishLanguage ? "Aplicación Pokémon" : "Pokémon App",
@@ -117,6 +106,7 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         "/projectImages/pokemon2.png",
         "/projectImages/pokemon4.png",
       ],
+      leftPosition: true,
       tags: [
         "#React",
         "#Next.js",
@@ -125,6 +115,16 @@ export const getProjects = (isEspanishLanguage: boolean) => {
         "#Axios",
         "#NextUI",
       ],
+    },
+    {
+      title: isEspanishLanguage ? "Aplicación ProTic" : "ProTic App",
+      description: isEspanishLanguage
+        ? `Fue una aplicación integral desarrollada durante el curso MisionTIC. Incluía módulos clave para la gestión de ventas, productos y usuarios, 
+           proporcionando una solución totalmente integrada para pequeñas y medianas empresas para optimizar sus operaciones.`
+        : `It was a comprehensive application developed during the MisionTIC course. It included key modules for managing sales, products, and users, 
+           providing a fully integrated solution for small to medium-sized businesses to streamline their operations.`,
+      images: ["/projectImages/proTic.png"],
+      tags: ["#Javascript", "#HTML", "#CSS", "#Tailwind"],
     },
   ];
 };

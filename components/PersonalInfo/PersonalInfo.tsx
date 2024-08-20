@@ -1,6 +1,6 @@
-import MacWindow from "components/MacWindow/MacWindow";
-import RainbowButton from "components/RainbowButton/RainbowButton";
 import clsx from "clsx";
+import RainbowButton from "@components/RainbowButton/RainbowButton";
+import MacWindow from "@components/MacWindow/MacWindow";
 
 import styles from "./PersonalInfo.module.scss";
 
