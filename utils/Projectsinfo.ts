@@ -119,9 +119,9 @@ export const getProjects = (isEspanishLanguage: boolean) => {
     {
       title: isEspanishLanguage ? "Aplicación ProTic" : "ProTic App",
       description: isEspanishLanguage
-        ? `Fue una aplicación integral desarrollada durante el curso MisionTIC. Incluía módulos clave para la gestión de ventas, productos y usuarios, 
+        ? `Fue una aplicación integral desarrollada durante el curso MisionTIC del Gobierno de Colombia. Incluía módulos clave para la gestión de ventas, productos y usuarios, 
            proporcionando una solución totalmente integrada para pequeñas y medianas empresas para optimizar sus operaciones.`
-        : `It was a comprehensive application developed during the MisionTIC course. It included key modules for managing sales, products, and users, 
+        : `It was a comprehensive application developed during the MisionTIC course of the government of Colombia. It included key modules for managing sales, products, and users, 
            providing a fully integrated solution for small to medium-sized businesses to streamline their operations.`,
       images: ["/projectImages/proTic.png"],
       tags: ["#Javascript", "#HTML", "#CSS", "#Tailwind"],
