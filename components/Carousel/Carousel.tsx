@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+
 import styles from "./Carousel.module.scss";
 
 interface CarouselProps {
@@ -23,7 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
   if (!isMounted) {
     return (
       <div className={styles.carousel}>
-        <img src={images[0]} alt="Initial slide" />
+        <Image src={images[0]} alt="Initial slide" layout="fill" />
       </div>
     );
   }
@@ -37,7 +39,11 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
             index === currentIndex ? styles.active : ""
           }`}
         >
-          <img src={image} alt={`Carousel Image ${index + 1}`} />
+          <Image
+            src={image}
+            alt={`Carousel Image ${index + 1}`}
+            layout="fill"
+          />
         </div>
       ))}
     </div>

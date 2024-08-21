@@ -1,3 +1,4 @@
+import Image from "next/image";
 import clsx from "clsx";
 import RainbowButton from "@components/RainbowButton/RainbowButton";
 import MacWindow from "@components/MacWindow/MacWindow";
@@ -38,9 +39,12 @@ const PersonalInfo: React.FC<PersonalInfo> = ({
 
       <div className={styles.personalInfoContainer}>
         <div>
-          <img
+          <Image
             className={styles.image}
-            src={isLightMode ? "sunglasses.png" : "emoji.png"}
+            src={isLightMode ? "/sunglasses.png" : "/emoji.png"}
+            alt="emoji in a laptop"
+            width={200}
+            height={210}
           />
           <div className={styles.contactButton}>
             <RainbowButton

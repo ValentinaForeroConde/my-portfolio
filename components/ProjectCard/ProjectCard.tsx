@@ -51,8 +51,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {description}
         </div>
         <div className={clsx(styles.tags, isLightMode && styles.lightTags)}>
-          {tags?.map((tag) => (
-            <div className={styles.tag}>{tag}</div>
+          {tags?.map((tag, index) => (
+            <div key={index} className={styles.tag}>
+              {tag}
+            </div>
           ))}
         </div>
       </div>
