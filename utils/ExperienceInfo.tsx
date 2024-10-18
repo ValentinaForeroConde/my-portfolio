@@ -113,6 +113,14 @@ export const getExperience = (isEspanishLanguage: boolean) => {
         },
         { name: "Node.js", link: "https://nodejs.org/docs/latest/api/" },
         { name: "Formik - Yup", link: "https://formik.org/" },
+        { name: "Strapi", link: "https://strapi.io/" },
+        { name: "LogRocket", link: "https://logrocket.com/" },
+        {
+          name: "GA4",
+          link: "https://support.google.com/analytics/",
+        },
+        { name: "Jest", link: "https://jestjs.io/" },
+        { name: "Playwright", link: "https://playwright.dev/" },
       ],
     },
     {
