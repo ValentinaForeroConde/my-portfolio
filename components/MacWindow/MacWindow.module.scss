@@ -78,8 +78,25 @@
   font-size: 14px;
   margin: 0 10px 10px 20px;
   color: $color-dark0;
+
+  p {
+    margin: 0 0 12px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  :global(.highlight) {
+    color: $color-dark5;
+    font-weight: 600;
+  }
 }
 
 .mainInfoLight {
   color: $color-white;
+
+  :global(.highlight) {
+    color: $color-orange-light3;
+  }
 }

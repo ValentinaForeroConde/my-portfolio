@@ -16,18 +16,16 @@ const MacWindow: React.FC<MacWindow> = ({
   const name = isEspanishLanguage
     ? "Soy Valentina Forero"
     : `I'm Valentina Forero`;
+
   const description = isEspanishLanguage
-    ? `> Una desarrolladora de software apasionada, radicada en Medellín-Colombia, 
-  con 3 años de experiencia profesional especializada en React. Estoy comprometida
-  con la creación de interfaces intuitivas, receptivas y fáciles de usar que
-  ofrezcan experiencias excepcionales al usuario. Mi trabajo está impulsado
-  por un compromiso con el aprendizaje continuo, la innovación y la excelencia
-  en el diseño de UI/UX.`
-    : `> A passionate software developer based in Medellín, Colombia, with 3 years
-  of professional experience specializing in React. I am dedicated to creating
-  intuitive, responsive, and user-friendly interfaces that provide exceptional user
-  experiences. My work is driven by a commitment to continuous learning,
-  innovation, and excellence in UI/UX design.`;
+    ? `<p>> <span class="highlight">Desarrolladora Frontend</span> especializada en React y Next.js</p>
+    <p>Construyo interfaces rápidas, accesibles y bien cuidadas, con foco en UX,
+    performance y código limpio.</p>
+    <p>4 años de experiencia profesional construyendo aplicaciones web.</p>`
+    : `<p>> <span class="highlight">Frontend Engineer</span> specialized in React & Next.js</p>
+    <p>I build fast, accessible, and polished user interfaces, with a strong focus on UX, 
+    performance, and clean code.</p>
+    <p>4 years of professional experience building web applications.</p>`;
 
   return (
     <div className={clsx(styles.window, isLightMode && styles.windowDark)}>
@@ -47,9 +45,8 @@ const MacWindow: React.FC<MacWindow> = ({
 
         <code
           className={clsx(styles.mainInfo, isLightMode && styles.mainInfoLight)}
-        >
-          {description}
-        </code>
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </div>
   );
