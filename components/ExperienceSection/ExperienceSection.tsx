@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import clsx from "clsx";
 import Button from "@components/Button/Button";
 
@@ -17,15 +17,29 @@ interface ExperienceSectionProps {
     }[];
   }[];
   isLightMode?: boolean;
+  isEspanishLanguage?: boolean;
 }
+
+const INITIAL_ITEMS = 2;
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   workExperience,
   isLightMode,
+  isEspanishLanguage,
 }) => {
+  const [showAll, setShowAll] = useState(false);
+
+  const hasMoreItems = workExperience?.length > INITIAL_ITEMS;
+  const peekItem =
+    !showAll && hasMoreItems ? workExperience?.[INITIAL_ITEMS] : null;
+
+  const visibleExperiences = showAll
+    ? workExperience
+    : workExperience?.slice(0, INITIAL_ITEMS);
+
   return (
     <div className={styles.container}>
-      {workExperience?.map((experience) => (
+      {visibleExperiences?.map((experience) => (
         <div
           key={experience.title}
           className={clsx(styles.section, isLightMode && styles.sectionLight)}
@@ -58,6 +72,59 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({
           </div>
         </div>
       ))}
+
+      {peekItem && (
+        <div className={styles.peekWrapper}>
+          <div
+            className={clsx(
+              styles.section,
+              styles.peekSection,
+              isLightMode && styles.sectionLight
+            )}
+          >
+            <div className={styles.header}>
+              <div className={styles.companyTitle}>
+                <h2 className={styles.company}>{peekItem.company}</h2>
+                <span
+                  className={clsx(
+                    styles.title,
+                    isLightMode && styles.titleLight
+                  )}
+                >
+                  - {peekItem.title}
+                </span>
+              </div>
+              <div className={styles.durationLocation}>
+                {peekItem.duration} - {peekItem.location}
+              </div>
+            </div>
+          </div>
+          <div
+            className={clsx(
+              styles.fadeOverlay,
+              isLightMode && styles.fadeOverlayLight
+            )}
+          />
+        </div>
+      )}
+
+      {hasMoreItems && (
+        <button
+          className={clsx(
+            styles.showMoreBtn,
+            isLightMode && styles.showMoreBtnLight
+          )}
+          onClick={() => setShowAll(!showAll)}
+        >
+          {showAll
+            ? isEspanishLanguage
+              ? "Ver menos"
+              : "Show less"
+            : isEspanishLanguage
+            ? "Ver más"
+            : "Show more"}
+        </button>
+      )}
     </div>
   );
 };

@@ -17,7 +17,7 @@ const DownloadLink: React.FC<DownloadLink> = ({
   return (
     <div className={clsx(styles.download, isLightMode && styles.downloadLight)}>
       <a
-        href="https://drive.google.com/file/d/1-7e7vBngGh0jDb1VCcGvMY7OMIWc2znp/view"
+        href="https://drive.google.com/file/d/1JAxPItthbegs1fdHhrvNZIizFYxkXhFN/view?usp=sharing"
         target="_blank"
       >
         {isEspanishLanguage ? "Descargar mi CV" : "Download my CV"}
