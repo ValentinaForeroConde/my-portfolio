@@ -3,18 +3,16 @@ import clsx from "clsx";
 import RainbowButton from "@components/RainbowButton/RainbowButton";
 import MacWindow from "@components/MacWindow/MacWindow";
 
-import styles from "./PersonalInfo.module.scss";
+import styles from "./Hero.module.scss";
 
-interface PersonalInfo {
+interface Hero {
   theme?: string;
   isEspanishLanguage?: boolean;
 }
 
-const PersonalInfo: React.FC<PersonalInfo> = ({
-  theme,
-  isEspanishLanguage,
-}) => {
+const Hero: React.FC<Hero> = ({ theme, isEspanishLanguage }) => {
   const isLightMode = theme === "light";
+
   return (
     <div
       className={clsx(styles.container, isLightMode && styles.containerLight)}
@@ -48,7 +46,7 @@ const PersonalInfo: React.FC<PersonalInfo> = ({
           />
           <div className={styles.contactButton}>
             <RainbowButton
-              text={isEspanishLanguage ? "Contáctame!" : "Contact Me!"}
+              text={isEspanishLanguage ? "Hablemos!" : "Let's Talk!"}
               onClick={() => {
                 window.location.href = "mailto:valeforero98@gmail.com";
               }}
@@ -66,4 +64,4 @@ const PersonalInfo: React.FC<PersonalInfo> = ({
   );
 };
 
-export default PersonalInfo;
+export default Hero;

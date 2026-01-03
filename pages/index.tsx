@@ -1,16 +1,18 @@
 import Head from "next/head";
 import clsx from "clsx";
 import Header from "@components/Header/Header";
-import PersonalInfo from "@components/PersonalInfo/PersonalInfo";
+import Hero from "@components/Hero/Hero";
 import ExperienceSection from "@components/ExperienceSection/ExperienceSection";
 import ProjectsSection from "@components/ProjectSection/ProjectSection";
 import SocialMedia from "@components/SocialMedia/SocialMedia";
+import Title from "@components/Title/Title";
 import Seo from "@utils/seo";
 import { getProjects } from "@utils/Projectsinfo";
 import { getExperience } from "@utils/ExperienceInfo";
 import { useStore } from "@hooks/useStore";
 
 import styles from "../styles/Home.module.scss";
+import AboutTerminal from "@components/AboutTerminal/AboutTerminal";
 
 export default function Home() {
   const theme = useStore((state) => state.theme);
@@ -42,27 +44,28 @@ export default function Home() {
         className={clsx(styles.container, isLightMode && styles.containerLight)}
       >
         <Header theme={theme} isEspanishLanguage={isEspanishLanguage} />
-        <PersonalInfo theme={theme} isEspanishLanguage={isEspanishLanguage} />
-        <h1
-          className={clsx(
-            styles.sectionTitle,
-            isLightMode && styles.sectionTitleLight
-          )}
-        >
-          {isEspanishLanguage ? "EXPERIENCIA" : "EXPERIENCE"}
-        </h1>
+        <Hero theme={theme} isEspanishLanguage={isEspanishLanguage} />
+        <Title
+          isLightMode={isLightMode}
+          text={isEspanishLanguage ? "ACERCA DE MÍ" : "ABOUT ME"}
+        />
+        <AboutTerminal
+          isLightMode={isLightMode}
+          isEspanishLanguage={isEspanishLanguage}
+        />
+        <Title
+          isLightMode={isLightMode}
+          text={isEspanishLanguage ? "EXPERIENCIA" : "EXPERIENCE"}
+        />
         <ExperienceSection
           workExperience={experience}
           isLightMode={isLightMode}
+          isEspanishLanguage={isEspanishLanguage}
         />
-        <h1
-          className={clsx(
-            styles.sectionTitle,
-            isLightMode && styles.sectionTitleLight
-          )}
-        >
-          {isEspanishLanguage ? "PROYECTOS" : "PROJECTS"}
-        </h1>
+        <Title
+          isLightMode={isLightMode}
+          text={isEspanishLanguage ? "PROYECTOS" : "PROJECTS"}
+        />
         <ProjectsSection projects={projects} isLightMode={isLightMode} />
         <SocialMedia isLightMode={isLightMode} />
       </div>

@@ -1,0 +1,361 @@
+@import "styles/_mixins.scss";
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0 0 16px 0;
+  opacity: 0.9;
+}
+
+.titleLight {
+  opacity: 0.85;
+}
+
+.terminal {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid $dracula-current;
+  background: $dracula-bg;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+  margin-bottom: 60px;
+}
+
+.terminalLight {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: $dracula-current;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminalLight .topBar {
+  background: #f0f0f0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.red {
+  background: $dracula-red;
+}
+.yellow {
+  background: $dracula-yellow;
+}
+.green {
+  background: $dracula-green;
+}
+
+.topBarTitle {
+  margin-left: 8px;
+  font-size: 13px;
+  color: $dracula-comment;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.terminalLight .topBarTitle {
+  color: #666;
+}
+
+.body {
+  padding: 20px 18px 22px 18px;
+  color: $dracula-fg;
+}
+
+.terminalLight .body {
+  color: #333;
+}
+
+.block + .block {
+  margin-top: 20px;
+}
+
+.commandRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+}
+
+.prompt {
+  color: $dracula-green;
+  font-weight: 700;
+}
+
+.terminalLight .prompt {
+  color: #28c840;
+}
+
+.command {
+  color: $dracula-pink;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.terminalLight .command {
+  color: #d63384;
+}
+
+.output {
+  margin: 12px 0 0 22px;
+}
+
+.line {
+  margin: 5px 0;
+  line-height: 1.6;
+  color: $dracula-fg;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+.terminalLight .line {
+  color: #444;
+}
+
+.cursor {
+  width: 10px;
+  height: 18px;
+  border-radius: 2px;
+  display: inline-block;
+  background: $dracula-green;
+  animation: blink 1s steps(1) infinite;
+  transform: translateY(2px);
+}
+
+.terminalLight .cursor {
+  background: #28c840;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+// Settings
+.settingsWrapper {
+  margin-left: auto;
+  position: relative;
+}
+
+.settingsBtn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: opacity 0.2s, background 0.2s;
+
+  &:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.themeMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px;
+  min-width: 140px;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.themeOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.themeOptionActive {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.themePreview {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.previewdracula {
+  background: linear-gradient(135deg, $dracula-bg 50%, $dracula-pink 50%);
+}
+
+.previewnord {
+  background: linear-gradient(135deg, $nord-bg 50%, $nord-cyan 50%);
+}
+
+.previewoneDark {
+  background: linear-gradient(135deg, $oneDark-bg 50%, $oneDark-purple 50%);
+}
+
+// Theme: Dracula (default)
+.themeDracula {
+  background: $dracula-bg;
+  border-color: $dracula-current;
+
+  .topBar {
+    background: $dracula-current;
+  }
+
+  .topBarTitle {
+    color: $dracula-comment;
+  }
+
+  .body {
+    color: $dracula-fg;
+  }
+
+  .prompt {
+    color: $dracula-green;
+  }
+
+  .command {
+    color: $dracula-pink;
+  }
+
+  .line {
+    color: $dracula-fg;
+  }
+
+  .cursor {
+    background: $dracula-green;
+  }
+
+  .red {
+    background: $dracula-red;
+  }
+  .yellow {
+    background: $dracula-yellow;
+  }
+  .green {
+    background: $dracula-green;
+  }
+}
+
+// Theme: Nord
+.themeNord {
+  background: $nord-bg;
+  border-color: $nord-current;
+
+  .topBar {
+    background: $nord-current;
+  }
+
+  .topBarTitle {
+    color: $nord-comment;
+  }
+
+  .body {
+    color: $nord-fg;
+  }
+
+  .prompt {
+    color: $nord-cyan;
+  }
+
+  .command {
+    color: $nord-blue;
+  }
+
+  .line {
+    color: $nord-fg;
+  }
+
+  .cursor {
+    background: $nord-cyan;
+  }
+
+  .red {
+    background: $nord-red;
+  }
+  .yellow {
+    background: $nord-yellow;
+  }
+  .green {
+    background: $nord-green;
+  }
+}
+
+// Theme: One Dark
+.themeOneDark {
+  background: $oneDark-bg;
+  border-color: $oneDark-current;
+
+  .topBar {
+    background: $oneDark-current;
+  }
+
+  .topBarTitle {
+    color: $oneDark-comment;
+  }
+
+  .body {
+    color: $oneDark-fg;
+  }
+
+  .prompt {
+    color: $oneDark-green;
+  }
+
+  .command {
+    color: $oneDark-purple;
+  }
+
+  .line {
+    color: $oneDark-fg;
+  }
+
+  .cursor {
+    background: $oneDark-green;
+  }
+
+  .red {
+    background: $oneDark-red;
+  }
+  .yellow {
+    background: $oneDark-yellow;
+  }
+  .green {
+    background: $oneDark-green;
+  }
+}
