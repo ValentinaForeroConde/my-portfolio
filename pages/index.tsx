@@ -12,6 +12,7 @@ import { getExperience } from "@utils/ExperienceInfo";
 import { useStore } from "@hooks/useStore";
 
 import styles from "../styles/Home.module.scss";
+import AboutTerminal from "@components/AboutTerminal/AboutTerminal";
 
 export default function Home() {
   const theme = useStore((state) => state.theme);
@@ -48,7 +49,10 @@ export default function Home() {
           isLightMode={isLightMode}
           text={isEspanishLanguage ? "ACERCA DE MÍ" : "ABOUT ME"}
         />
-
+        <AboutTerminal
+          isLightMode={isLightMode}
+          isEspanishLanguage={isEspanishLanguage}
+        />
         <Title
           isLightMode={isLightMode}
           text={isEspanishLanguage ? "EXPERIENCIA" : "EXPERIENCE"}
